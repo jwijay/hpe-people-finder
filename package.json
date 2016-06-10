@@ -1,0 +1,43 @@
+{
+  "name": "grommet-people-finder",
+  "description": "App that allows searching for people in your organization",
+  "version": "0.4.0",
+  "authors": [
+    "Alan Souza",
+    "Bryan Jacquot",
+    "Chris Carlozzi",
+    "Eric Soderberg"
+  ],
+  "homepage": "http://grommet.io",
+  "bugs": "https://github.com/grommet/grommet-people-finder/issues",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grommet/grommet-people-finder.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "compression": "^1.6.1",
+    "cookie-parser": "^1.4.1",
+    "es6-promise": "^3.2.1",
+    "express": "^4.13.4",
+    "express-http-proxy": "^0.6.0",
+    "grommet": "https://github.com/grommet/grommet/tarball/stable",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.0.6",
+    "json-server": "^0.8.8",
+    "json-stringify-pretty-compact": "^1.0.1",
+    "ldapjs": "^1.0.0",
+    "leaflet": "^0.7.7",
+    "lodash": "^4.5.0",
+    "morgan": "^1.6.1",
+    "request": "^2.69.0",
+    "serve-static": "^1.10.2",
+    "whatwg-fetch": "^1.0.0",
+    "ws": "^1.0.1"
+  },
+  "devDependencies": {
+    "grommet-toolbox": "^0.1.14",
+    "yargs": "^3.30.0"
+  }
+}

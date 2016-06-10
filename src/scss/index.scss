@@ -1,0 +1,38 @@
+// (C) Copyright 2014-2015 Hewlett Packard Enterprise Development LP
+
+@import '~grommet/scss/hpe/index';
+
+#map {
+  .leaflet-popup-content-wrapper {
+    border-radius: $border-radius;
+  }
+
+  .leaflet-control-container,
+  .leaflet-popup {
+    a:not(.anchor) {
+      text-decoration: none;
+    }
+  }
+}
+
+// setting min-width so avatar shrinks proportionally
+// and only down until size of small icons
+.avatar {
+  min-width: 48px;
+  width: 100%;
+  max-width: 150px;
+}
+
+// IE11 fix to vertically align center box within header
+.header > .box {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: $header-height;
+  }
+}
+
+// IE11 fix for group list items with overflowing text
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .list-item > span {
+    max-width: 100%;
+  }
+}
