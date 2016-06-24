@@ -11,7 +11,9 @@ import Section from 'grommet/components/Section';
 import Paragraph from 'grommet/components/Paragraph';
 import Box from 'grommet/components/Box';
 import HPELogo from './HPELogo';
-import Logo from './Logo';
+import PeopleIcon from './PeopleIcon';
+import GroupsIcon from './GroupsIcon';
+import LocationsIcon from './LocationsIcon';
 import config from '../config';
 
 export default class Finder extends Component {
@@ -40,14 +42,25 @@ export default class Finder extends Component {
 
   render () {
     let texture;
-    let colorIndex = this.props.scope.colorIndex;
     let footer;
+    let currentIcon;
+    let imageUrl;
+    let colorIndex = this.props.scope.colorIndex;
+    const currentScope = this.props.scope.ou;
 
-    // use a random background image
-    const imageIndex = ((new Date()).getTime() % 4) + 1;
+    if (currentScope === 'groups') {
+      currentIcon = <GroupsIcon reverse={true} />;
+      imageUrl = 'img/groups-finder-background.jpg';
+    } else if (currentScope === 'locations') {
+      currentIcon = <LocationsIcon reverse={true} />;
+      imageUrl = 'img/locations-finder-background.jpg';
+    } else {
+      currentIcon = <PeopleIcon reverse={true} />;
+      imageUrl = 'img/people-finder-background.jpg';
+    }
 
     if (this.props.initial) {
-      texture = `url(img/people-finder-background-${imageIndex}.jpg)`;
+      texture = `url(${imageUrl})`;
       colorIndex = "neutral-1-a";
       footer = (
         <Footer float={true} colorIndex="grey-3-a"
@@ -60,7 +73,7 @@ export default class Finder extends Component {
       );
     }
 
-    var scopeAnchors = Object.keys(config.scopes).map(key => {
+    const scopeAnchors = Object.keys(config.scopes).map(key => {
       const scope = config.scopes[key];
       return (
         <Anchor key={key} onClick={this._onScope.bind(this, scope)}>
@@ -76,7 +89,7 @@ export default class Finder extends Component {
           float={this.props.initial}
           colorIndex={colorIndex} splash={this.props.initial}
           responsive={false} justify="between">
-          <Menu inline={false} icon={<Logo reverse={true} />}
+          <Menu inline={false} icon={currentIcon}
             dropColorIndex={colorIndex}>
             {scopeAnchors}
           </Menu>
