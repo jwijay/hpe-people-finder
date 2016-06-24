@@ -5,7 +5,7 @@ import React, { Component, PropTypes } from 'react';
 export default class LocationsIcon extends Component {
 
   render () {
-    let className = 'logo-icon';
+    let className = 'grommetux-logo-icon';
     if (this.props.className) {
       className += ' ' + this.props.className;
     }
